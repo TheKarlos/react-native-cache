@@ -19,6 +19,16 @@ var cacheMulti = new Cache({
 })
 
 describe("cache with 1 item", function() {
+    it("can initialize cache", function(done) {
+        cache.initializeCache()
+        .then(() => {
+            done()
+        })
+        .catch(e => {
+            console.log(e)
+        })
+    });
+
     it("can set and get entry", function(done) {
         cache.setItem("key1", "value1")
         .then(() => {
@@ -144,6 +154,16 @@ describe("cache with 1 item", function() {
 });
 
 describe("cache with 10 items", function() {
+    it("can initialize cache", function(done) {
+        cacheMulti.initializeCache()
+        .then(() => {
+            done()
+        })
+        .catch(e => {
+            console.log(e)
+        })
+    });
+
     it("can set and get multiple entries", function(done) {
         cacheMulti.setItem("key1", "value1")
         .then(() => {
